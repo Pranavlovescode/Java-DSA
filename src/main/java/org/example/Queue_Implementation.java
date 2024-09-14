@@ -5,7 +5,7 @@ import java.util.Queue;
 
 public class Queue_Implementation {
     public static void main(String[] args) {
-        System.out.println("This is Queue Implementation");
+        System.out.println("This is Queue Implementation using Linked List");
         Queue<Integer> queue = new LinkedList<>();
 //        Adding an element in the queue
         queue.offer(23);
