@@ -7,6 +7,7 @@ public class ArrayListExample {
     public static void main(String[] args) {
 //        So in this example we will learn about the java collections framework(especially ArrayList)
         ArrayList<Integer> list = new ArrayList<>();
+        ArrayList<Integer> list1 = new ArrayList<>(list);
 //        Following are the functions that can be applied to the list to get the problem solved.
 
 //        Adding the element in the list. So, here the elements will be added from the last.
@@ -15,12 +16,12 @@ public class ArrayListExample {
         list.add(3);
         list.add(4);
         System.out.println(list);
-
+        System.out.println(list.indexOf(3));
 //        Adding the elements in between the list.
 //        list.add(1, 10);
 //        System.out.println("The newly added element is 10 and the list is " + list);
 
-
+        System.out.println(list1);
 //        Getting the element in the list using it's index
         int i = list.get(2);
         System.out.println("The element at the 2 th index is " + i);
@@ -52,5 +53,11 @@ public class ArrayListExample {
         Collections.sort(list);
         System.out.println(list);
 
+        int max = list.stream().max(Integer::compare).get();
+        System.out.println(max);
+// Finding the second largest element in the list
+int secondMax = list.stream().sorted(Collections.reverseOrder()).distinct().skip(1).findFirst().get();
+
+System.out.println("The second largest element is " + secondMax);
     }
 }
