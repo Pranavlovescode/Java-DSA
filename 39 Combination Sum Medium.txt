@@ -41,4 +41,31 @@ Constraints:
     All elements of candidates are distinct.
     1 <= target <= 40
 
+Solution:-
+import java.util.ArrayList;
+import java.util.List;
 
+class Solution {
+    private void helper(int[] candidates, int target, int ind, List<Integer> ds, List<List<Integer>> v) {
+        if (ind >= candidates.length) {
+            if (target == 0) {
+                v.add(new ArrayList<>(ds)); // Make a copy of ds and add to result list
+            }
+            return;
+        }
+        if (target >= 0) {
+            ds.add(candidates[ind]);
+            helper(candidates, target - candidates[ind], ind, ds, v);
+            ds.remove(ds.size() - 1); // Backtrack by removing the last element
+        }
+        helper(candidates, target, ind + 1, ds, v);
+    }
+
+    public List<List<Integer>> combinationSum(int[] candidates, int target) {
+        List<List<Integer>> v = new ArrayList<>();
+        List<Integer> ds = new ArrayList<>();
+        int ind = 0;
+        helper(candidates, target, ind, ds, v);
+        return v;
+    }
+}
