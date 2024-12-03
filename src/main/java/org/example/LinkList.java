@@ -1,5 +1,7 @@
 package org.example;
 
+import java.awt.*;
+
 public class LinkList {
     static LinkListNode head;
 
@@ -33,13 +35,41 @@ public class LinkList {
         temp.next = node;
     }
 
+
+    public void deleteFirst(){
+        LinkListNode node = head;
+        head = node.next;
+        node.next=null;
+    }
+
+    public void deleteLast(){
+        LinkListNode node = head;
+        while (node.next.next != null){
+            node = node.next;
+        }
+        node.next = null;
+//        System.out.println(node.val);
+
+    }
+
+    public void deleteAtGivenIndex(int index){
+        LinkListNode node = head;
+        int num =1;
+        while ((num) != (index-1)){
+            num ++;
+            node = node.next;
+        }
+        node.next = node.next.next;
+//        System.out.println(node.val);
+    }
+
     public void display(){
         LinkListNode node = head;
         while (node!= null){
             System.out.print(node.val + " -> ");
             node = node.next;
         }
-        System.out.print("END");
+        System.out.println("END");
     }
 
     public static void main(String[] args) {
@@ -51,8 +81,19 @@ public class LinkList {
         list.insertFirst(55);
         list.insertAtLast(12);
         list.insertFirst(87);
+
         list.insertAtGivenIndex(3,141);
         list.insertAtGivenIndex(4,42);
+
+        list.display();
+
+        list.deleteFirst();
+        list.display();
+
+        list.deleteLast();
+        list.display();
+
+        list.deleteAtGivenIndex(3);
         list.display();
 
     }
