@@ -63,6 +63,25 @@ public class LinkList {
 //        System.out.println(node.val);
     }
 
+    public void removeNthfromEnd(int n){
+        LinkListNode temp = head;
+        int length = 1;
+        while(temp != null){
+            temp = temp.next;
+            length++;
+        }
+        System.out.println(length);
+        int uptoPointer = length-1 - n;
+        int i = 1;
+        LinkListNode node = head;
+        while (i != uptoPointer){
+            node = node.next;
+            i++;
+        }
+        node.next = node.next.next;
+
+    }
+
     public void display(){
         LinkListNode node = head;
         while (node!= null){
@@ -91,10 +110,21 @@ public class LinkList {
         list.display();
 
         list.deleteLast();
+        list.display();list.deleteLast();
+        list.display();list.deleteLast();
+        list.display();list.deleteLast();
+        list.display();list.deleteLast();
+        list.display();list.deleteLast();
+        list.display();list.deleteLast();
         list.display();
 
-        list.deleteAtGivenIndex(3);
-        list.display();
+//        list.deleteAtGivenIndex(3);
+//        list.display();
+//
+//
+//        System.out.println("Deleting from n th index");
+//        list.removeNthfromEnd(2);
+//        list.display();
 
     }
 }
