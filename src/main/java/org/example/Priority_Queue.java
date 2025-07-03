@@ -1,11 +1,11 @@
 package org.example;
 
 // Priority Queue as the name suggests that it gives the priority to the most highest value element in the queue according to the comparator function in the priority heap while creation of the queue
-import java.util.Iterator;
-import java.util.PriorityQueue;
+import java.util.*;
 
 public class Priority_Queue {
     public static void main(String[] args) {
+//        Min heap
         PriorityQueue<Integer> pq = new  PriorityQueue(6);
 
 //        for (int i = 0; i < 6; i++) {
@@ -15,7 +15,7 @@ public class Priority_Queue {
         pq.add(84);
         pq.add(30);
         pq.add(14);
-        pq.add(5);
+        pq.offer(5);
         System.out.println(pq);
         pq.poll();
         System.out.println(pq);
@@ -27,5 +27,18 @@ public class Priority_Queue {
             System.out.println(iterator.next());
         }
         System.out.println("The size is "+pq.size());
+
+        System.out.println(Arrays.toString(pq.toArray()));
+
+//        Max heap
+        PriorityQueue<Integer> pq2 = new PriorityQueue<>(Collections.reverseOrder());
+        pq2.add(23);
+        pq2.add(84);
+        pq2.add(30);
+        pq2.add(14);
+        pq2.add(5);
+        System.out.println(pq2);
+        int i = 6;
+        System.out.println(Integer.toString(i));
     }
 }
