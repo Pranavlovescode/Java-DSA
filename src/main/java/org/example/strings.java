@@ -6,6 +6,7 @@ public class strings {
     public static void main(String[] args) {
         Stack<String> st = new Stack<>();
         String s = "  hello world  ";
+        System.out.println("Trimmed string "+s.trim());
         StringBuffer word = new StringBuffer();
         int i = 0;
         while (i < s.length()) {
