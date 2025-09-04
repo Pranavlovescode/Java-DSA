@@ -1,5 +1,6 @@
 package org.example;
 
+import java.util.Collections;
 import java.util.Stack;
 
 public class strings {
@@ -25,7 +26,6 @@ public class strings {
         if (!word.isEmpty()) {
             st.push(word.toString());
         }
-
         System.out.println(st);
         StringBuilder result = new StringBuilder();
         while (!st.isEmpty()) {
@@ -34,7 +34,6 @@ public class strings {
         }
 
         System.out.println(result.toString());
-
 
         int x = -121;
         String string = Integer.toString(x);
@@ -62,6 +61,15 @@ public class strings {
 
         String finalStr = value.toString();
         System.out.println(Integer.valueOf(finalStr));
+
+
+//        another testing problem
+
+        String str = "abc";
+        String str2 = "ahbgdc";
+        System.out.println("The output is");
+        System.out.println(str2.charAt(0) + str.charAt(0));
+//        System.out.println(str2.contains(str.charAt(0)));
 
     }
 }
