@@ -28,7 +28,7 @@ public class ZigzagConversion {
     }
     public static void main(String[] args) {
         ZigzagConversion zigzagConversion = new ZigzagConversion();
-        String res = zigzagConversion.convert("PAYPALISHIRING",3);
+        String res = zigzagConversion.convert("PAYPALISHIRINGGEEKYNERDS",6);
         System.out.println(res);
     }
 }
